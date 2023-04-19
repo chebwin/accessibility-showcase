@@ -1,0 +1,14 @@
+$pink-bg: #f8bbd0;
+$purple-border: #7b1fa2;
+
+.main-content {
+    margin: 36px auto;
+    width: 800px;
+
+    .message {
+        margin: 18px 0 0;
+        padding: 18px;
+        background-color: $pink-bg;
+        border: 2px dashed $purple-border;
+    }
+}
