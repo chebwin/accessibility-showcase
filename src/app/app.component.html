@@ -27,13 +27,15 @@
 
   </ol-->
 
-  <h2>Reduced motion</h2>
+  <p>While each section has a targeted user type all users may benefit from these additions.</p>
+
+  <h2>Reduced motion - cognitive and motor impairments</h2>
 
   <p>People with cognitive and/or motor impairments may find animations tricky - allow them to be turned off.</p>
 
   <p>Here is a <a href="https://www.britishairways.com/travel/country_choice/public/en_gb?source=MNVLNG">remove animation example we made earlier</a> - Chrome can render.</p>
 
-  <h2>Descriptive images</h2>
+  <h2>Descriptive image - poor vision users</h2>
 
   <div *ngIf="showGifs">
     <img src="assets/temporary-disability.gif" alt="" />
@@ -52,7 +54,7 @@
     <span *ngIf="!showGifs">Show gifs again</span>
   </button>
 
-  <h2>Clickable area</h2>
+  <h2>Clickable area - motor impairment</h2>
 
   <p>Links should have a clickable area of at least 44px by 44px unless they are inline text.</p>
 
@@ -62,7 +64,7 @@
 
   <button (click)="biggerButtons=true" [ngClass]="{'bigger' : biggerButtons }" [attr.disabled]="biggerButtons ? 'true' : null">Make buttons bigger!</button>
 
-  <h2>Descriptive links</h2>
+  <h2>Descriptive links - cognitive and poor vision</h2>
 
   <p>control + option + u</p>
 
@@ -74,7 +76,7 @@
 
   <p>Link text should contain the context of where they go.</p>
 
-  <h2>Keyboard Navigation</h2>
+  <h2>Keyboard Navigation - mostly poor vision users</h2>
 
   <p>All key links and interactions should be navigable via keyboard</p>
 
@@ -92,7 +94,7 @@
 
   <p>Your colour-scheme or other variations could ruin the accessibility - it could even be that the library isn't as accessible as you think or need it to be.</p>
 
-  <h2>Colour</h2>
+  <h2>Colour - colour blindness users</h2>
 
   <p>Colour schemes shouldn't be THE ONLY way to convey information other than how talented your design team is.</p>
 
