@@ -27,6 +27,8 @@
 
   </ol-->
 
+  <p>An example of things that may look ok or work for most users but some will struggle with.</p>
+
   <p>While each section has a targeted user type all users may benefit from these additions.</p>
 
   <h2>Reduced motion - cognitive and motor impairments</h2>
@@ -42,7 +44,7 @@
 
     <figure>
       <img src="assets/temporary-disability.gif" alt="Animation of Graham riding slowly on a skateboard - animation cuts just as he begins to fall over" />
-      <figcaption>Sometimes it's the easy stuff that gets you</figcaption>
+      <figcaption>Even after 25 years it's the easy stuff that gets you</figcaption>
     </figure>
   </div>
 
@@ -115,65 +117,17 @@
   <button class="inaccessible-button" [ngClass]="{'bigger' : biggerButtons }">Click here</button>
   <button class="accessible-button" [ngClass]="{'bigger' : biggerButtons }">Accessible here</button>
 
-  <h2>More Forms</h2>
+  <h2>Things we've missed</h2>
 
-  <p>Forms is a big area of web accessibility so even touching on it would have taken my full time.</p>
+  <ul>
+    <li>Forms inc autocomplete, datepickers, logic, error handling</li>
+    <li>Menus</li>
+    <li>tabs</li>
+    <li>show-hide/accordions</li>
+    <li>loads more</li>
+  </ul>
 
-  <!--mat-slide-toggle>Angular Materials Slider (checkbox imitation)</mat-slide-toggle>
+  <p>Even the items we've touched on above we've only skimmed the context of.</p>
 
-  <mat-tab-group>
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
-  </mat-tab-group>
-
-  <div class="message">
-    <p>If you're lucky enough to use such libraries, ensure it and your implementation is accessible - it's not a freebie.</p>
-    <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
-    <mat-menu #animals="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-      <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-    </mat-menu>
-
-    <mat-menu #vertebrates="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-      <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-      <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-      <button mat-menu-item>Birds</button>
-      <button mat-menu-item>Mammals</button>
-    </mat-menu>
-
-    <mat-menu #invertebrates="matMenu">
-      <button mat-menu-item>Insects</button>
-      <button mat-menu-item>Molluscs</button>
-      <button mat-menu-item>Crustaceans</button>
-      <button mat-menu-item>Corals</button>
-      <button mat-menu-item>Arachnids</button>
-      <button mat-menu-item>Velvet worms</button>
-      <button mat-menu-item>Horseshoe crabs</button>
-    </mat-menu>
-
-    <mat-menu #fish="matMenu">
-      <button mat-menu-item>Baikal oilfish</button>
-      <button mat-menu-item>Bala shark</button>
-      <button mat-menu-item>Ballan wrasse</button>
-      <button mat-menu-item>Bamboo shark</button>
-      <button mat-menu-item>Banded killifish</button>
-    </mat-menu>
-
-    <mat-menu #amphibians="matMenu">
-      <button mat-menu-item>Sonoran desert toad</button>
-      <button mat-menu-item>Western toad</button>
-      <button mat-menu-item>Arroyo toad</button>
-      <button mat-menu-item>Yosemite toad</button>
-    </mat-menu>
-
-    <mat-menu #reptiles="matMenu">
-      <button mat-menu-item>Banded Day Gecko</button>
-      <button mat-menu-item>Banded Gila Monster</button>
-      <button mat-menu-item>Black Tree Monitor</button>
-      <button mat-menu-item>Blue Spiny Lizard</button>
-      <button mat-menu-item disabled>Velociraptor</button>
-    </mat-menu-->
 </div>
 
