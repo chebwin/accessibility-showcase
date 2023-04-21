@@ -2,34 +2,96 @@ $pink-bg: #f8bbd0;
 $purple-border: #7b1fa2;
 
 .main-content {
-    margin: 36px auto;
-    width: 800px;
+    margin: 0 auto;
+    padding: 36px 0;
+    max-width: 800px;
 
-    h1, h2, h3, h4 {
-        margin: 18px 0 0;
+    h1, h2, h3, h4, p {
+        margin: 0 0 18px;
+    }
+
+    ol, ul {
+        padding-bottom: 18px;
+        margin: 0;
+
+        > ol, ul {
+            padding: 18px 0 0 18px;
+        }
+    }
+
+    li {
+        padding-bottom: 18px;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    figcaption {
+        margin-top: -18px
+    }
+
+    img, figcaption {
+        max-width: 80%;
+        padding-left: 10%;
+        margin-bottom: 18px;
+    }
+
+    button {
+        margin-bottom: 18px;
+    }
+
+    figure {
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .message {
-        margin: 18px 0 0;
-        padding: 18px;
+        margin: 0 0 18px;
+        padding: 18px 18px 0;
         background-color: $pink-bg;
         border: 2px dashed $purple-border;
     }
 
-    ol, ul {
-        padding-top: 18px;
-        margin: 0;
-    }
-
-    li {
-        padding-top: 18px;
-
-        &:nth-child(1) {
-            padding-top: 0;
-        }
+    .bigger {
+        padding: 18px;
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .strikethrough {
         text-decoration: line-through;
     }
+
+    .inaccessible-button {
+        background-color: #00421D;
+        color: #FF7575;
+    }
+
+    .form-input {
+        > * {
+            width: 50%;
+            margin: 9px;
+            padding: 4.5px
+        }
+
+        .error {
+            border: 2px red solid;
+        }
+
+        p {
+            margin-top: -9px;
+        }
+    }
+}
+
+.acc-reader {
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0
 }

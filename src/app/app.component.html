@@ -1,68 +1,131 @@
 <div class="main-content">
-<h1>{{ title }}!</h1>
-<p>all 5 mins</p>
-<ol>
-  <li>Intro - Ed<ul>
-    <li>what is accessibility?</li>
-    <li>disability is a mismatched design</li>
-    <li>fonts</li>
-    <li>essential to some - useful to all</li></ul>
-  </li>
-  <li>Identifying - Andrew<ul>
-    <li>on presentation</li>
-    <li>Wave tool</li>
-    <li>chrome dev tools</li>
-    <li>rending optoins</li>
-    <li>reduced motion</li></ul>
-  </li>
-  <li>Demonstration - front end user - Graham<ul>
-    <li>reduced motion example</li>
-    <li>links</li>
-    <li>headings</li>
-    <li>button click area 24px size with 24px offset</li>
-    <li>forms - screen reader</li>
-    <li>keyboard navigation</li></ul>
-  </li>
-  <li>Outro Ed - with further reading, contacts, money</li>
+  <h1>{{ title }}!</h1>
+  <!--p>all 5 mins</p>
+  <ol>
+    <li>Intro - Ed<ul>
+      <li>what is accessibility?</li>
+      <li>disability is a mismatched design</li>
+      <li>fonts</li>
+      <li>essential to some - useful to all</li></ul>
+    </li>
+    <li>Identifying - Andrew<ul>
+      <li>on presentation</li>
+      <li>Wave tool</li>
+      <li>chrome dev tools</li>
+      <li>rending optoins</li>
+      <li>reduced motion</li></ul>
+    </li>
+    <li>Demonstration - front end user - Graham<ul>
+      <li>reduced motion example</li>
+      <li>links</li>
+      <li>headings</li>
+      <li>button click area 24px size with 24px offset</li>
+      <li>forms - screen reader</li>
+      <li>keyboard navigation</li></ul>
+    </li>
+    <li>Outro Ed - with further reading, contacts, money</li>
 
-</ol>
+  </ol-->
 
-<h2>Reduced motion</h2>
+  <h2>Reduced motion</h2>
 
-<p>People with cognitive and/or motor impairments may find animations tricky - allow them to be turned off.</p>
+  <p>People with cognitive and/or motor impairments may find animations tricky - allow them to be turned off.</p>
 
-<p>Here is a <a href="https://www.britishairways.com/travel/country_choice/public/en_gb?source=MNVLNG">remove animation example we made earlier</a>.</p>
+  <p>Here is a <a href="https://www.britishairways.com/travel/country_choice/public/en_gb?source=MNVLNG">remove animation example we made earlier</a> - Chrome can render.</p>
 
-<h2>Descriptive images</h2>
+  <h2>Descriptive images</h2>
 
-<img src="assets/temporary-disability.gif" alt="" />
+  <div *ngIf="showGifs">
+    <img src="assets/temporary-disability.gif" alt="" />
 
-<figure>
-  <img src="assets/temporary-disability.gif" alt="Animation of Graham riding slowly on a skateboard - animation cuts just as he begins to fall over" />
-  <figcaption>Sometimes it's the easy stuff that gets you</figcaption>
-</figure>
+    <figure>
+      <img src="assets/temporary-disability.gif" alt="Animation of Graham riding slowly on a skateboard - animation cuts just as he begins to fall over" />
+      <figcaption>Sometimes it's the easy stuff that gets you</figcaption>
+    </figure>
+  </div>
 
-<h2>Descriptive links</h2>
+  <p role="alert" class="acc-reader" *ngIf="!showGifs">Images hidden</p>
+  <p role="alert" class="acc-reader" *ngIf="showGifs">Images shown</p>
 
-<ul class="links">
-  <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Find out more</a> - descriptor no use</li>
-  <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Flight deals</a> - good</li>
-  <li><a href="https://www.cat-ears-male-sized.com">Cat ears referral link</a> - also good</li>
-</ul>
+  <button (click)="showGifs=!showGifs" aria-live="polite" [ngClass]="{'bigger' : biggerButtons }">
+    <span *ngIf="showGifs">Hide these awful animated gifs</span>
+    <span *ngIf="!showGifs">Show gifs again</span>
+  </button>
 
-<button>Hide these awful animated gifs</button>
+  <h2>Clickable area</h2>
 
-<h2>Component libraries</h2>
+  <p>Links should have a clickable area of at least 44px by 44px unless they are inline text.</p>
 
-<mat-slide-toggle>Angular Materials Slider (checkbox imitation)</mat-slide-toggle>
+  <p>Lets improve the buttons on the page.</p>
 
-<mat-tab-group>
-  <mat-tab label="First"> Content 1 </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
-  <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group>
+  <p role="alert" class="acc-reader" *ngIf="biggerButtons">Buttons are now bigger</p>
 
-<div class="message">
+  <button (click)="biggerButtons=true" [ngClass]="{'bigger' : biggerButtons }" [attr.disabled]="biggerButtons ? 'true' : null">Make buttons bigger!</button>
+
+  <h2>Descriptive links</h2>
+
+  <p>control + option + u</p>
+
+  <ul class="links">
+    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Find out more</a> - descriptor no use</li>
+    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Flight deals</a> - good. If link was going to 'New York Flight Deals' say so!</li>
+    <li><a href="https://www.cat-ears-male-sized.com">Cat ears referral link</a> - also good</li>
+  </ul>
+
+  <p>Link text should contain the context of where they go.</p>
+
+  <h2>Keyboard Navigation</h2>
+
+  <p>All key links and interactions should be navigable via keyboard</p>
+
+  <h3>Headings</h3>
+
+  <p>Headings can also be navigated via most screen readers.</p>
+
+  <p>control + option + u then right arrow key</p>
+
+  <p>Headings and their level give context to all users about how your content is structured. A heading 3 within a heading 2 is content that is related to heading 2 but specifically about heading 3. Also applies outside of HTML.</p>
+
+  <h2>Component libraries</h2>
+
+  <div class="message"><p>You can't always trust external component libraries are accessible - you need to check</p></div>
+
+  <p>Your colour-scheme or other variations could ruin the accessibility - it could even be that the library isn't as accessible as you think or need it to be.</p>
+
+  <h2>Colour</h2>
+
+  <p>Colour schemes shouldn't be THE ONLY way to convey information other than how talented your design team is.</p>
+
+  <form>
+    <div class="form-input">
+      <input type="text" value="graham.weddermanleighton.com" id="email" class="error" />
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-input">
+      <input type="text" value="graham.weddermanleighton.com" aria-labelledby="email-label email-label-error" class="error" />
+      <label id="email-label">Repeat email address</label>
+      <p id="email-label-error">Please enter a valid email address</p>
+    </div>
+  </form>
+
+  <p>We also need to consider some users with certain colour blindnesses may find certain combinations of colours troublesome - Chrome can render examples.</p>
+
+  <button class="inaccessible-button" [ngClass]="{'bigger' : biggerButtons }">Click here</button>
+  <button class="accessible-button" [ngClass]="{'bigger' : biggerButtons }">Accessible here</button>
+
+  <h2>More Forms</h2>
+
+  <p>Forms is a big area of web accessibility so even touching on it would have taken my full time.</p>
+
+  <!--mat-slide-toggle>Angular Materials Slider (checkbox imitation)</mat-slide-toggle>
+
+  <mat-tab-group>
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+
+  <div class="message">
     <p>If you're lucky enough to use such libraries, ensure it and your implementation is accessible - it's not a freebie.</p>
     <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
     <mat-menu #animals="matMenu">
@@ -109,16 +172,6 @@
       <button mat-menu-item>Black Tree Monitor</button>
       <button mat-menu-item>Blue Spiny Lizard</button>
       <button mat-menu-item disabled>Velociraptor</button>
-    </mat-menu>
+    </mat-menu-->
 </div>
 
-<h2>ideas</h2>
-<ol>
-  <li>I was thinking of showing off the WAVE toolbar, and some of Chrome's emulation modes for visual impairments. Maybe the Lighthouse accessibility one too, but aware there's not really a lot of time.</li>
-  <li>What is accessibility? Accessibility is about people, user experience - not just checklists</li>
-  <li>Disability & design - medical model vs social model. Bad design is disabling and designs that are flexible and meet user needs they are enabling</li>
-  <li>Challenging assumptions - differences in user needs</li>
-  <li>Essential to some, useful for all - temporary disabilities, situational limitations</li>
-</ol>
-
-<div>

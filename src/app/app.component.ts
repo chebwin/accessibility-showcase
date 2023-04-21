@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Accessibility Showcase - Demonstration';
+  showGifs: boolean=true;
+  biggerButtons: boolean=false;
 }
