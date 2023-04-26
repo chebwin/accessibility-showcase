@@ -1,35 +1,11 @@
 <div class="main-content">
   <h1>{{ title }}!</h1>
-  <!--p>all 5 mins</p>
-  <ol>
-    <li>Intro - Ed<ul>
-      <li>what is accessibility?</li>
-      <li>disability is a mismatched design</li>
-      <li>fonts</li>
-      <li>essential to some - useful to all</li></ul>
-    </li>
-    <li>Identifying - Andrew<ul>
-      <li>on presentation</li>
-      <li>Wave tool</li>
-      <li>chrome dev tools</li>
-      <li>rending optoins</li>
-      <li>reduced motion</li></ul>
-    </li>
-    <li>Demonstration - front end user - Graham<ul>
-      <li>reduced motion example</li>
-      <li>links</li>
-      <li>headings</li>
-      <li>button click area 24px size with 24px offset</li>
-      <li>forms - screen reader</li>
-      <li>keyboard navigation</li></ul>
-    </li>
-    <li>Outro Ed - with further reading, contacts, money</li>
-
-  </ol-->
 
   <p>An example of things that may look ok or work for most users but some will struggle with.</p>
 
   <p>While each section has a targeted user type all users may benefit from these additions.</p>
+
+  <p>I don't have an auditory example but a good one can be found here - <a href="https://wearehuman.hr/demo-human#demo-form">Human demo video with subtitles</a>.</p>
 
   <h2>Reduced motion - cognitive and motor impairments</h2>
 
@@ -37,66 +13,7 @@
 
   <p>Here is a <a href="https://www.britishairways.com/travel/country_choice/public/en_gb?source=MNVLNG">remove animation example we made earlier</a> - Chrome can render.</p>
 
-  <h2>Descriptive image - poor vision users</h2>
-
-  <div *ngIf="showGifs">
-    <img src="assets/temporary-disability.gif" alt="" />
-
-    <figure>
-      <img src="assets/temporary-disability.gif" alt="Animation of Graham riding slowly on a skateboard - animation cuts just as he begins to fall over" />
-      <figcaption>Even after 25 years it's the easy stuff that gets you</figcaption>
-    </figure>
-  </div>
-
-  <p role="alert" class="acc-reader" *ngIf="!showGifs">Images hidden</p>
-  <p role="alert" class="acc-reader" *ngIf="showGifs">Images shown</p>
-
-  <button (click)="showGifs=!showGifs" aria-live="polite" [ngClass]="{'bigger' : biggerButtons }">
-    <span *ngIf="showGifs">Hide these awful animated gifs</span>
-    <span *ngIf="!showGifs">Show gifs again</span>
-  </button>
-
-  <h2>Clickable area - motor impairment</h2>
-
-  <p>Links should have a clickable area of at least 44px by 44px unless they are inline text.</p>
-
-  <p>Lets improve the buttons on the page.</p>
-
-  <p role="alert" class="acc-reader" *ngIf="biggerButtons">Buttons are now bigger</p>
-
-  <button (click)="biggerButtons=true" [ngClass]="{'bigger' : biggerButtons }" [attr.disabled]="biggerButtons ? 'true' : null">Make buttons bigger!</button>
-
-  <h2>Descriptive links - cognitive and poor vision</h2>
-
-  <p>control + option + u</p>
-
-  <ul class="links">
-    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Find out more</a> - descriptor no use</li>
-    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Flight deals</a> - good. If link was going to 'New York Flight Deals' say so!</li>
-    <li><a href="https://www.cat-ears-male-sized.com">Cat ears referral link</a> - also good</li>
-  </ul>
-
-  <p>Link text should contain the context of where they go.</p>
-
-  <h2>Keyboard Navigation - mostly poor vision users</h2>
-
-  <p>All key links and interactions should be navigable via keyboard</p>
-
-  <h3>Headings</h3>
-
-  <p>Headings can also be navigated via most screen readers.</p>
-
-  <p>control + option + u then right arrow key</p>
-
-  <p>Headings and their level give context to all users about how your content is structured. A heading 3 within a heading 2 is content that is related to heading 2 but specifically about heading 3. Also applies outside of HTML.</p>
-
-  <h2>Component libraries</h2>
-
-  <div class="message"><p>You can't always trust external component libraries are accessible - you need to check</p></div>
-
-  <p>Your colour-scheme or other variations could ruin the accessibility - it could even be that the library isn't as accessible as you think or need it to be.</p>
-
-  <h2>Colour - colour blindness users</h2>
+  <h2>Colour - visual impairments: colour blindness users specifically</h2>
 
   <p>Colour schemes shouldn't be THE ONLY way to convey information other than how talented your design team is.</p>
 
@@ -114,20 +31,71 @@
 
   <p>We also need to consider some users with certain colour blindnesses may find certain combinations of colours troublesome - Chrome can render examples.</p>
 
-  <button class="inaccessible-button" [ngClass]="{'bigger' : biggerButtons }">Click here</button>
+  <button class="inaccessible-button" [ngClass]="{'bigger' : biggerButtons }">Inaccessible  here</button>
   <button class="accessible-button" [ngClass]="{'bigger' : biggerButtons }">Accessible here</button>
 
-  <h2>Things we've missed</h2>
+  <h2>Clickable area - motor impairment</h2>
 
-  <ul>
-    <li>Forms inc autocomplete, datepickers, logic, error handling</li>
-    <li>Menus</li>
-    <li>tabs</li>
-    <li>show-hide/accordions</li>
-    <li>loads more</li>
+  <p>Links should have a clickable area of at least 44px by 44px unless they are inline text.</p>
+
+  <p>Lets improve the buttons on the page.</p>
+
+  <button (click)="biggerButtons=true" [ngClass]="{'bigger' : biggerButtons }" [attr.disabled]="biggerButtons ? 'true' : null">Make buttons bigger!</button>
+
+  <p role="alert" class="acc-reader" *ngIf="biggerButtons">Buttons are now bigger</p>
+
+  <h2>Descriptive image - visual</h2>
+
+  <p>control + option then right arrow key</p>
+
+  <div *ngIf="showGifs">
+    <img src="assets/media-render-path-123ada.gif" />
+
+    <figure>
+      <img src="assets/media-render-path-123ada.gif" alt="Animation of Graham riding slowly on a skateboard - animation cuts just as he begins to fall over" />
+      <figcaption>Even after 25 years it's the easy stuff that gets you</figcaption>
+    </figure>
+  </div>
+
+  <p role="alert" class="acc-reader" *ngIf="!showGifs">Images hidden</p>
+  <p role="alert" class="acc-reader" *ngIf="showGifs">Images shown</p>
+
+  <button (click)="showGifs=!showGifs" aria-live="polite" [ngClass]="{'bigger' : biggerButtons }">
+    <span *ngIf="showGifs">Hide these awful animated gifs</span>
+    <span *ngIf="!showGifs">Show gifs again</span>
+  </button>
+
+  <p>Pressing this button should give context of what has happened and then update the user as what the button now says.</p>
+
+  <h2>Descriptive links - cognitive and visual impairments</h2>
+
+  <p>control + option + u</p>
+
+  <ul class="links">
+    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Find out more</a> - descriptor no use</li>
+    <li><a href="https://www.britishairways.com/en-gb/offers/flight-deals">Flight deals</a> - good. If link was going to 'New York Flight Deals' say so!</li>
+    <li><a href="https://www.cat-ears-male-sized.com">Cat ears referral link</a> - also good</li>
   </ul>
 
-  <p>Even the items we've touched on above we've only skimmed the context of.</p>
+  <p>In short: link text should contain the context of where they go.</p>
+
+  <h2>Keyboard Navigation - mostly visual impairments (but even in the good times I use tab a lot)</h2>
+
+  <p>All key links and interactions should be navigable via keyboard</p>
+
+  <h3>Headings</h3>
+
+  <p>Headings can also be navigated via most screen readers.</p>
+
+  <p>control + option + u then right arrow key</p>
+
+  <p>Headings and their level give context to all users about how your content is structured. A heading 3 within a heading 2 is content that is related to heading 2 but specifically about heading 3.</p>
+
+  <!--h2>Component libraries</h2>
+
+  <div class="message"><p>You can't always trust external component libraries are accessible - you need to check</p></div>
+
+  <p>Your colour-scheme or other variations could ruin the accessibility - it could even be that the library isn't as accessible as you think or need it to be.</p-->
 
 </div>
 
